@@ -1,0 +1,28 @@
+{
+  "name": "vaq-plugin-ajpush",
+  "version": "1.0.0",
+  "description": "vaq plugin for ajpush",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc --build tsconfig.json",
+    "lint": "eslint --fix -c .eslintrc.js --ext .js,.ts ./src",
+    "prebuild": "npm run lint",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "typescript": "^3.7.4"
+  },
+  "keywords": [
+    "ajpush",
+    "vaq",
+    "vue",
+    "apicloud",
+    "vue-apicloud-quickstart"
+  ],
+  "author": "w-xuefeng",
+  "license": "MIT"
+}
