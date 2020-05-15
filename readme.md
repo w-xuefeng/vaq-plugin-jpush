@@ -9,17 +9,9 @@ vue-apicloud-quickstart plugin for JPush
 
 [APICloud JPush 模块文档](https://docs.apicloud.com/Client-API/Open-SDK/ajpush)
 
-准备工作
-
+### 准备工作
 - 1.在控制台选择添加 `JPush` 模块
-
-- 2.在 `config.xml` 配置
-
-名称：`ajpush`
-
-参数：`app_key`, `channel`
-
-描述：配置极光推送应用信息
+- 2.在 `config.xml` 配置极光推送应用信息
 
 ```xml
  <feature name="ajpush">
@@ -27,11 +19,11 @@ vue-apicloud-quickstart plugin for JPush
    <param name="channel" value="your channel" />
  </feature>
 ```
+### 字段描述:
++ `app_key`：通过极光推送网站获得
++ `channel`: 渠道号 
 
-字段描述:
-- 1. `app_key`：通过极光推送网站获得
-- 2. `channel`: 渠道号
- 
+### 使用示例
 
 ```ts
 import JPush from 'vaq-plugin-jpush'
@@ -94,15 +86,28 @@ jpush.setBadge({ badge: 1 })
 // 部分 Android 手机，如小米和三星的某些型号可以使用如下方法设置 badge， iOS 也生效
 api.setAppIconBadge({ badge: 1 })
 
-
 // apicloud 官方文档中的其他方法可以通过 实列实现
 const mypush = jpush.getInstance()
-mypush.onPause() // 通知极光推送SDK当前应用退入到后台
-mypush.onResume() // 通知极光推送SDK当前应用恢复到前台
-mypush.isPushStopped() // 查询当前推送服务是否停止
-mypush.stopPush() // 停止Push推送
-mypush.resumePush() // 恢复Push推送
-mypush.setPushTime({ days: [1,2], startHour: 8, endHour: 20 }) // 设置允许推送时间，只Android有效
-mypush.setSilenceTime({ startHour: 8, startMinute: 0, endHour: 20, endMinute: 59 }) // 设置通知静默时间，只Android有效
+
+// 通知极光推送SDK当前应用退入到后台
+mypush.onPause()
+
+// 通知极光推送SDK当前应用恢复到前台
+mypush.onResume()
+
+// 查询当前推送服务是否停止
+mypush.isPushStopped()
+
+// 停止Push推送
+mypush.stopPush()
+
+// 恢复Push推送
+mypush.resumePush()
+
+// 设置允许推送时间，只Android有效
+mypush.setPushTime({ days: [1,2], startHour: 8, endHour: 20 })
+
+// 设置通知静默时间，只Android有效
+mypush.setSilenceTime({ startHour: 8, startMinute: 0, endHour: 20, endMinute: 59 })
 
 ```

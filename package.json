@@ -2,7 +2,7 @@
   "name": "vaq-plugin-ajpush",
   "version": "1.0.0",
   "description": "vaq plugin for ajpush",
-  "main": "index.ts",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "lint": "eslint --fix -c .eslintrc.js --ext .js,.ts ./src",
