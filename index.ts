@@ -1,3 +1,3 @@
-import JPush from './src/JPush';
+import JPush from './src/JPush'
 
-export default JPush;
+export default JPush

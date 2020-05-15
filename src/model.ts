@@ -10,7 +10,7 @@ export interface RetSetListener {
   id: string | number;
   title: string;
   content: string ;
-  extra: any;
+  extra: object;
   isNotification?: boolean;
 }
 
@@ -26,9 +26,7 @@ export interface RetGetRegistrationId {
   id: number | string;
 }
 
-export interface CallbackError {
-  [any: string]: any;
-}
+export type CallbackError = object
 
 export interface BindAliasAndTagsParams {
   alias: string;
@@ -40,7 +38,7 @@ export interface ClearNotificationParams {
 }
 
 export interface SetPushTimeParams {
-  days: 0|1|2|3|4|5|6;
+  days: (0|1|2|3|4|5|6)[];
   startHour: 0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23;
   endHour: 0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23;
 }
@@ -79,7 +77,7 @@ export interface PushData {
   id: string | number;
   title: string;
   content: string;
-  extra: any;
+  extra: object;
 }
 
 export type AppParam = { ajpush: PushData }
@@ -88,4 +86,4 @@ export type RetAndroidAppintent = { appParam: AppParam }
 
 export type RetiosNoticeclicked = { value: IosPushData }
 
-export type IosPushData = { content: string; extra: any }
+export type IosPushData = { content: string; extra: object }

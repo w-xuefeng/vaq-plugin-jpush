@@ -21,7 +21,7 @@ export default class JPush {
     this.JP = jp
     this.JP.init()
   }
-  init() {
+  init(): Promise<RetInit> {
     return new Promise((resolve: (ret?: RetInit) => void, reject: (err?: CallbackError) => void) => {      
       this.JP.init((ret, err) => {
         if (ret && ret.status) {
@@ -32,10 +32,10 @@ export default class JPush {
       })
     })
   }
-  getInstance() {
+  getInstance(): AJPush {
     return this.JP
   }
-  getRegistrationId() {
+  getRegistrationId(): Promise<RetGetRegistrationId> {
     return new Promise((resolve: (ret?: RetGetRegistrationId) => void, reject: (err?: CallbackError) => void) => {      
       this.JP.getRegistrationId((ret, err) => {
         if (ret.id) {
@@ -46,22 +46,22 @@ export default class JPush {
       })
     })
   }
-  setListener(cb?: Callback<RetSetListener, CallbackError>) {
+  setListener(cb?: Callback<RetSetListener, CallbackError>): void {
     this.JP.setListener(cb)
   }
-  removeListener() {
+  removeListener(): void {
     this.JP.removeListener()
   }
-  bindAliasAndTags(params: BindAliasAndTagsParams, cb?: Callback<RetBindAliasAndTags, CallbackError>)  {
+  bindAliasAndTags(params: BindAliasAndTagsParams, cb?: Callback<RetBindAliasAndTags, CallbackError>): void  {
     this.JP.bindAliasAndTags(params, cb)
   }
-  clearNotification(params: ClearNotificationParams, cb?: Callback<CallbackResult, CallbackError>) {
+  clearNotification(params: ClearNotificationParams, cb?: Callback<CallbackResult, CallbackError>): void {
     this.JP.clearNotification(params, cb)
   }
-  setBadge(params: SetBadgeParams) {
+  setBadge(params: SetBadgeParams): void {
     this.JP.setBadge(params)
   }
-  androidAppintent(cb?: Callback<PushData>) {
+  androidAppintent(cb?: Callback<PushData>): void {
     api.addEventListener({
       name: 'appintent'
     }, (ret: RetAndroidAppintent, err: CallbackError) => {
@@ -70,7 +70,7 @@ export default class JPush {
         }
     })
   }
-  iosNoticeclicked(cb?: Callback<IosPushData>) {
+  iosNoticeclicked(cb?: Callback<IosPushData>): void {
     api.addEventListener({
       name: 'noticeclicked'
     }, (ret: RetiosNoticeclicked, err: CallbackError) => {
