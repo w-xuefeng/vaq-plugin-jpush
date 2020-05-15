@@ -1,5 +1,5 @@
 {
-  "name": "vaq-plugin-ajpush",
+  "name": "vaq-plugin-jpush",
   "version": "1.0.0",
   "description": "vaq plugin for ajpush",
   "main": "./dist/index.js",
