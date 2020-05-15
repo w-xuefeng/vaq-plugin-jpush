@@ -1,4 +1,4 @@
-<div style="width:100%;text-align:center">
+<div style="width:100%;display:flex;justify-content:center;">
   <img src="https://vaq.wangxuefeng.com.cn/img/logo.png" height="100" style="margin-right:20px;">
   <img src="./assets/img/jpush.png" height="100">
 </div>
@@ -6,6 +6,8 @@
 
 # VAQ Plugin JPush
 vue-apicloud-quickstart plugin for JPush
+
+![npm](https://img.shields.io/npm/v/vaq-plugin-jpush?style=flat-square)
 
 [APICloud JPush 模块文档](https://docs.apicloud.com/Client-API/Open-SDK/ajpush)
 
@@ -24,6 +26,10 @@ vue-apicloud-quickstart plugin for JPush
 + `channel`: 渠道号 
 
 ### 使用示例
+
+```shell
+npm install vaq-plugin-jpush
+```
 
 ```ts
 import JPush from 'vaq-plugin-jpush'
