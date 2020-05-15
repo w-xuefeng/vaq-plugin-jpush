@@ -58,7 +58,7 @@ jpush.getRegistrationId().then(rs => {
   // Todo
 })
 
-// 绑定用户别名和标签。服务端可以指定别名和标签进行消息推送
+// 绑定用户别名和标签，服务端可以指定别名和标签进行消息推送
 jpush.bindAliasAndTags({
   alias: 'username-alias',
   tags: ['tag1', 'tag2']
@@ -92,7 +92,7 @@ jpush.setBadge({ badge: 1 })
 // 部分 Android 手机，如小米和三星的某些型号可以使用如下方法设置 badge， iOS 也生效
 api.setAppIconBadge({ badge: 1 })
 
-// apicloud 官方文档中的其他方法可以通过 实列实现
+// apicloud 官方文档中的其他方法可以通过实例实现
 const mypush = jpush.getInstance()
 
 // 通知极光推送SDK当前应用退入到后台
